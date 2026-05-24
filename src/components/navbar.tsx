@@ -66,7 +66,7 @@ export function Navbar() {
             )}
           </Button>
           <a
-            href="https://github.com"
+            href="https://github.com/rakha-elctrnx/sekadar-tools"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"

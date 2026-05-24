@@ -1,18 +1,12 @@
-
+import type { Metadata } from "next";
 import PasswordGeneratorTool from "./password-generator-tool";
-import { ToolDetailHeader } from "@/components/tool-detail-header";
-import { Key } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Password Generator",
+  description:
+    "Generate secure random passwords with customizable length and character options. Fast, free, and runs entirely in your browser.",
+};
 
 export default function PasswordGeneratorPage() {
-
-  return (
-    <div>
-      <ToolDetailHeader
-        title="Password Generator"
-        description="Generate secure random passwords with customizable options."
-        icon={Key}
-      />
-      <PasswordGeneratorTool />
-    </div>
-  );
+  return <PasswordGeneratorTool />;
 }

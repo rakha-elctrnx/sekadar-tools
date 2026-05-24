@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Aleo, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { PWARegister } from "@/components/pwa-register";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
@@ -26,6 +27,15 @@ export const metadata: Metadata = {
   },
   description:
     "A curated collection of free, fast, and privacy-friendly developer utilities. Encode, decode, format, and transform data right in your browser.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "SekadarTools",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
 };
 
 export default function RootLayout({
@@ -39,9 +49,13 @@ export default function RootLayout({
       className={`${dmSans.variable} ${aleo.variable} ${jetbrainsMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head />
+      <head>
+        <meta name="theme-color" content="#c5030c" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider>
+          <PWARegister />
           <Navbar />
           <main className="flex-1">{children}</main>
           <footer className="border-t border-border/50 py-6">
