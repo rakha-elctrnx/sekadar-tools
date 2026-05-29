@@ -2,6 +2,7 @@ import {
   Braces,
   Clock,
   FileCode2,
+  FileSpreadsheet,
   FileText,
   Palette,
   TextSearch,
@@ -79,6 +80,16 @@ export const tools: ToolDefinition[] = [
     isNew: false,
   },
   {
+    title: "CSV ↔ JSON Converter",
+    description:
+      "Convert CSV data to JSON arrays and JSON arrays back to CSV. Supports custom delimiters.",
+    href: "/tools/csv-json-converter",
+    icon: FileSpreadsheet,
+    category: "Text & Data",
+    tags: ["CSV", "JSON", "Convert", "Data"],
+    isNew: true,
+  },
+  {
     title: "Color Picker",
     description:
       "Pick colors, generate shades & tints, explore harmonies, build gradients, check contrast, and simulate color blindness.",
@@ -86,6 +97,6 @@ export const tools: ToolDefinition[] = [
     icon: Palette,
     category: "Design",
     tags: ["Color", "Design", "Picker", "Gradient", "Contrast"],
-    isNew: true,
+    isNew: false,
   },
 ];
