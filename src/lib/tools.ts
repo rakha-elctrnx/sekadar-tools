@@ -7,6 +7,7 @@ import {
   Palette,
   TextSearch,
   Key,
+  Globe,
 } from "lucide-react";
 
 export interface ToolDefinition {
@@ -97,6 +98,16 @@ export const tools: ToolDefinition[] = [
     icon: Palette,
     category: "Design",
     tags: ["Color", "Design", "Picker", "Gradient", "Contrast"],
+    isNew: false,
+  },
+  {
+    title: "UUID Generator",
+    description:
+      "Generate universally unique identifiers (UUIDs) for various applications.",
+    href: "/tools/uuid-generator",
+    icon: Globe,
+    category: "Developer",
+    tags: ["UUID", "Generator", "Developer"],
     isNew: false,
   },
 ];
