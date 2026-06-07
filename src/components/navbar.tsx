@@ -10,6 +10,7 @@ export function Navbar() {
   const pathname = usePathname();
   const { resolvedTheme, setTheme } = useTheme();
   const isToolsPage = pathname.startsWith("/tools");
+  const isAppsPage = pathname.startsWith("/apps");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/60">
@@ -30,12 +31,22 @@ export function Navbar() {
           <Link
             href="/"
             className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
-              !isToolsPage
+              !isToolsPage && !isAppsPage
                 ? "bg-[#c5030c] text-white"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Home
+          </Link>
+          <Link
+            href="/apps"
+            className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+              isAppsPage
+                ? "bg-[#c5030c] text-white"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Apps
           </Link>
           <Link
             href="/tools/regex-tester"
